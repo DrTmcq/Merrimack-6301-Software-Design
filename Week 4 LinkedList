@@ -1,0 +1,28 @@
+import java.util.Collections; //Importing Java classes to sort the list - Reuse is happening here
+import java.util.LinkedList; //For the LinkedList structure - Reuse is happening here
+import java.util.Scanner; //For reading user input - Reuse is happening here
+
+/**
+ * Week4LinkedList class - This program will read a list of integers from the input, stores and sort them in a LinkedList
+ */
+public class Week4LinkedList {
+	//Create a object to read from user input
+	public static void main(String[] args) {
+		//Create a object to read from user input
+	       Scanner input = new Scanner(System.in);
+	       //Create a LinkedList
+	       LinkedList<Integer> numbers = new LinkedList<>();
+	       //Ask for user input
+	       System.out.println("Enter a list of integers, separated by spaces, and press enter when done:");
+	       //Read the input line and split it into an array of strings
+	       String[] inputNumbers = input.nextLine().split(" "); //Reuse is happening here
+	       // Convert and add it to the LinkedList
+	       for (String str : inputNumbers) {
+	           numbers.add(Integer.parseInt(str));
+	       }
+	       //Sort the LinkedList in order using this action
+	       Collections.sort(numbers);
+	       //Print the sorted list
+	       System.out.println("Sorted linked list: " + numbers);
+	   } //close main method 
+	} //And finally the close class 
