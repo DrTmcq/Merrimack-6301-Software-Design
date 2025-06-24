@@ -1,0 +1,28 @@
+import java.util.Collections; // For sorting the list - Reuse is happening here
+import java.util.Scanner;     // For reading user input - Reuse is happening here
+import java.util.Stack;       // For using the Stack class - Reuse is happening here
+
+/**
+ * StackList class - This program reads a list of integers from user input, sorts them and pushes them into a Stack from smallest (bottom) to largest (top).
+ */
+public class StackList {
+    //Create a Scanner object to read input from user and reuse to handle user inputs
+    public static void main(String[] args) {
+        //Create a object to read from user input
+        Scanner input = new Scanner(System.in);
+        //Initialize a Stack to store integers and reuse for data storage - changed from Linkedlist to Stack
+        Stack<Integer> numbers = new Stack<>();
+        //Prompt the user to enter integers separated by spaces
+        System.out.println("Enter a list of integers, separated by spaces, and press enter when done:");
+        //Read the entire line and split it into string tokens and reuse to analyze the string inputs
+        String[] inputNumbers = input.nextLine().split(" ");
+        //Convert each string token to integer and add to LinkedList
+        for (String str : inputNumbers) {
+            numbers.add(Integer.parseInt(str));
+        }
+        //Sort the integer in ascending order - Sorting the Stack here but before it was the LinkedList
+        Collections.sort(numbers);
+        //Print the contents of the stack and sorting the Stack here but before it was the LinkedList
+        System.out.println("Sorted stack (smallest to largest): " + numbers);
+    }//close main method
+}//And finally the close class
